@@ -1,4 +1,5 @@
 # recommender_system
+created by Yice Luo
 Recommending by Group specific matrix factorization
 Data: Movielen ml-100k.
 Python version: 3.6 run on win 10.
