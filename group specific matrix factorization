@@ -101,7 +101,7 @@ for CV in range(5):
     Qnew=np.zeros(shape=(m,k))
     Snew=np.zeros(shape=(n,k))
     Tnew=np.zeros(shape=(m,k))
-    yhat=np.sum(np.multiply((P[x_train[:,0],:]+S[x_train[:,0],:]),(Q[x_train[:,0],:]+T[x_train[:,0],:])),1)
+    yhat=np.sum(np.multiply((P[x_train[:,0],:]+S[x_train[:,0],:]),(Q[x_train[:,1],:]+T[x_train[:,1],:])),1)
     L=(y-yhat)@(y-yhat)+l*(np.sum(np.multiply(P+S,P+S))+np.sum(np.multiply(Q+T,Q+T)))
     it=1  #number of iterations
     diff=1  #improvement over last iteration
@@ -154,7 +154,7 @@ for CV in range(5):
             P=Pnew
             S=Snew
         it=it+1
-    yhat_test=np.sum(np.multiply((P[x_test[:,0],:]+S[x_test[:,0],:]),(Q[x_test[:,0],:]+T[x_test[:,0],:])),1)
+    yhat_test=np.sum(np.multiply((P[x_test[:,0],:]+S[x_test[:,0],:]),(Q[x_test[:,1],:]+T[x_test[:,1],:])),1)
     rmse=sqrt((y_test-yhat_test)@(y_test-yhat_test)/y_test.size)
     RMSE.append(rmse)
     t=time.time()-t0
